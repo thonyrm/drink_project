@@ -1,15 +1,19 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import { useAppStore } from "../store/useAppStore";
 
 export default function Header() {
     const {pathname} = useLocation()
 
     const isHome= useMemo(() => pathname === '/' ,[pathname])
-    console.log(isHome)
+    const fetchCategories =  useAppStore((state) => state.fetchCategories)
+    useEffect(() => {
+        fetchCategories()
+    },[])
 
     return (
         
-        <header className="bg-slate-800">
+        <header className={isHome? "bg-[url(/bg.jpg)] bg-center bg-cover" : 'bg-slate-800' }>
             <div className="mx-auto container px-5 py-16">
                 <div className="flex justify-between items-center">
                     <div>
@@ -29,7 +33,7 @@ export default function Header() {
                 </div>
                 {isHome && (
                     <form 
-                        className="md:w-1/2 2xl:w-1/3"
+                        className="md:w-1/2 2xl:w-1/3 bg-orange-400 my-32 p-10 rounded-lg shadow space-y-6 "
                     >
                         <div className="space-y-4">
                             <label 
@@ -44,6 +48,23 @@ export default function Header() {
                                 placeholder="Nombre o ingrediente. Ej. Vodka, Tequila, Café"
                             />
                         </div>
+                        <div className="space-y-4">
+                            <label 
+                                htmlFor="category"
+                                className="block text-white font-extrabold text-lg" 
+                            >Categoría</label>
+                            <select 
+                                id="category"
+                                name="category"
+                                className="p-3 w-full rounded-lg bg-slate-200 focus:outline-none"
+                            > 
+                                <option value=""> -- Seleccione -- </option>
+                            </select>
+                        </div>
+                        <input type="submit"  
+                            value='Buscar Recetas'
+                            className="uppercase cursor-pointer bg-orange-800 hover:bg-orange-900 text-white font-extrabold rounded-lg p-2 w-full"
+                        />
                     </form>
                 )}
             </div>
