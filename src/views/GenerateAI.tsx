@@ -53,7 +53,7 @@ export default function GenerateAI() {
                 </button>
             </div>
             </form>
-            {isGenerating && <p className="text-center animate-pulse">Generando...</p> }
+            {isGenerating && <p className="text-center animate-pulse">Generando receta...</p> }
             <div className="py-10 whitespace-pre-wrap">
                 {recipe}
 
