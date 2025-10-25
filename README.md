@@ -1,73 +1,105 @@
-# React + TypeScript + Vite
+# 🍹 Drink Project with React + TypeScript + Zustand + Axios + Zod + Vite + OpenRouter AI
+---
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-181717?style=for-the-badge&logo=react&logoColor=yellow)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+![Zod](https://img.shields.io/badge/Zod-3E67B1?style=for-the-badge&logo=zod&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![ReactRouter](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![HeadlessUI](https://img.shields.io/badge/Headless_UI-111827?style=for-the-badge&logo=tailwindcss&logoColor=38BDF8)
+![Heroicons](https://img.shields.io/badge/Heroicons-0EA5E9?style=for-the-badge&logo=heroicons&logoColor=white)
+![AI](https://img.shields.io/badge/OpenRouter_AI-00FFFF?style=for-the-badge&logo=openai&logoColor=black)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
+## 🍸 Descripción
 
-Currently, two official plugins are available:
+Aplicación web moderna desarrollada con **React + TypeScript + Zustand + Axios + Zod + Vite + OpenRouter AI**, que permite **consultar y descubrir recetas de bebidas** a través de una REST API pública.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+La app ofrece una experiencia **interactiva y elegante**, donde el usuario puede explorar distintas categorías de bebidas, ver detalles completos (ingredientes, preparación, imágenes) y hasta **usar IA para obtener recomendaciones personalizadas** de recetas mediante **OpenRouter AI**.
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 🚀 Funcionalidades principales
 
-## Expanding the ESLint configuration
+- 🍸 **Búsqueda de recetas** por ingredientes o categorías (cocktails, coffee, shots, beers, etc).  
+- 🧠 **Recomendaciones con IA (OpenRouter)**: genera recetas sugeridas según el tipo de bebida deseado.  
+- 🧾 **Listado de categorías dinámico** consumido desde la API.  
+- 🔄 **Detalle de recetas** con ingredientes e instrucciones actualizadas sin recargar la página.  
+- ⚙️ **Validación estricta** de datos con **Zod**.  
+- 💾 **Gestión de estado global** con **Zustand**.  
+- 🧭 **Navegación entre páginas** usando **React Router**.  
+- 🎨 **UI moderna, accesible y responsiva** con **Headless UI + Heroicons + CSS**.  
+- 🤖 **Organización profesional del proyecto** con directorio `layout` para estructurar vistas y rutas.  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ⚛️ Hooks de React aplicados
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- 🧠 `useState` → Manejo de estados locales (inputs, filtros, estados de carga, etc).  
+- ⚡ `useEffect` → Peticiones a la API de bebidas y actualización automática de resultados.  
+- 📦 `useMemo` → Optimización del renderizado de listas de recetas.  
+- 🪄 `useRef` → Referencias a elementos del DOM para control de modales y animaciones.  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🔹 Hooks de **Zustand**
+
+- `useAppStore` → Estado global centralizado para la gestión de resultados, filtros y modales.  
+
+---
+
+## 🔹 Uso de **Axios + Zod + OpenRouter AI**
+
+- 🔍 **Axios** → Cliente HTTP para consumo de API REST.  
+- 🧾 **Zod** → Validación y tipado de respuestas antes de su renderizado.  
+- 🤖 **OpenRouter AI** → Integración de modelos de IA para búsquedas y recomendaciones de recetas inteligentes.  
+
+---
+
+## 📂 Estructura del proyecto
+
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+├─ components/   # Componentes reutilizables (DrinkCard, Header, Modal, Notification, etc.)
+├─ store/        # Estado global con Zustand (useAppStore)
+├─ service/      # Lógica de conexión con API (Axios + Zod) y modelos IA (OpenRouter)
+├─ types/        # Tipos y esquemas de datos (Categories, Drinks, etc.)
+├─ utils/        # Funciones auxiliares y validaciones con Zod
+├─ styles/       # Estilos globales en CSS
+├─ layout/       # Estructuras base (MainLayout, PageWrapper, etc.)
+├─ views/        # Vistas renderizadas por React Router
+└─ App.tsx       # Punto de entrada principal
 ```
+---
+## 🧩 Tecnologías utilizadas
+
+| Tecnología | Uso principal |
+|-------------|----------------|
+| ⚛️ **React** | Librería base para la UI |
+| 🧭 **React Router** | Navegación entre páginas |
+| 🧩 **TypeScript** | Tipado estático y mayor robustez |
+| 💾 **Zustand** | Manejo de estado global |
+| 🪙 **Axios** | Cliente HTTP para consumo de API |
+| 🧾 **Zod** | Validación de datos y esquemas |
+| 🧠 **OpenRouter AI** | Búsqueda y recomendaciones con inteligencia artificial |
+| 🧱 **Headless UI** | Componentes accesibles y personalizables |
+| 🎨 **Heroicons** | Íconos SVG de alta calidad |
+| 🎨 **CSS** | Estilos personalizados y responsive |
+| ⚡ **Vite** | Entorno de desarrollo rápido |
+
+---
+
+## 🔧 Setup del proyecto
+
+1. Clonar el repositorio:
+   ```
+   git clone https://github.com/thonyrm/drink_project.git
+   ```
+2. Instalar dependencias:
+
+    ```
+    npm install
+    ```
+---
+## 🖼️ Vista previa
+![App Screenshot](./public/preview1.png)
