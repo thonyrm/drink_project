@@ -102,4 +102,5 @@ La app ofrece una experiencia **interactiva y elegante**, donde el usuario puede
     ```
 ---
 ## 🖼️ Vista previa
-![App Screenshot](./public/preview1.png)
+![App Screenshot - Index](./public/Portada.png)
+![App Screenshot - Recetas](./public/Recetas.png)
