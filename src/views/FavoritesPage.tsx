@@ -18,10 +18,8 @@ export default function FavoritesPage() {
                                     drink = {drink}
                                 />
                             )
-
                         }
                     </div>
-
                 ) :
                 (
                     <p className="my-10 text-center">Los favoritos se mostrarán aquí </p>
