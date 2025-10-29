@@ -18,7 +18,6 @@ export async function getRecipes(filters : SearchFilter){
     if(result.success){
         return result.data
     }
-
 }
 
 export async function getRecipeById(id: Drink['idDrink']){
