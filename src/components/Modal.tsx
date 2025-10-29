@@ -88,7 +88,6 @@ export default function Modal() {
                                         
                                     </button>
                                 </div>
-                                
                             </DialogPanel>
                         </TransitionChild >
                     </div>
