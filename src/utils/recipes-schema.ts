@@ -17,12 +17,10 @@ export const DrinkAPIResponse = z.object({
     idDrink: z.string(),
     strDrink: z.string(),
     strDrinkThumb: z.string(),
-
 })
 
 export const DrinksAPIResponse = z.object({
     drinks:z.array(DrinkAPIResponse)
-
 })
 
 export const RecipeAPIResponseSchema = z.object({
