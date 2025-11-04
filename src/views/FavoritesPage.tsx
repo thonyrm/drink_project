@@ -25,7 +25,6 @@ export default function FavoritesPage() {
                     <p className="my-10 text-center">Los favoritos se mostrarán aquí </p>
                 )
             }
-            
         </>
     )
 }
