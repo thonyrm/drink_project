@@ -25,7 +25,6 @@ export default function IndexPage() {
                 <p className="my-10 text-center text-2xl">No hay resultados aún, utilioza el formulario de recetas</p>
             )
             }
-           
         </>
     )
 }
