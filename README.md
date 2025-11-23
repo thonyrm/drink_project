@@ -105,6 +105,8 @@ La app ofrece una experiencia **interactiva y elegante**, donde el usuario puede
 Puedes probar el proyecto funcionando aquí:  
 👉 [Cocktail Project en Vercel](https://drink-project-xi.vercel.app/)
 
+---
+
 ## 🖼️ Vista previa
 ![App Screenshot - Index](./public/Portada.png)
 ![App Screenshot - Recetas](./public/Recetas.png)
