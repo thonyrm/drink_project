@@ -1,5 +1,3 @@
-
-
 import { type StateCreator } from "zustand";
 import AIService from "../services/AIService";
 
@@ -8,6 +6,7 @@ export type AISlice = {
     isGenerating: boolean
     generateRecipe: (prompt: string) => Promise<void>
 }
+
 export const createAISlice: StateCreator<AISlice, [], [], AISlice> = (set) => ({
     recipe: '',
     isGenerating:false,
