@@ -22,6 +22,7 @@ export default function GenerateAI() {
         await generateRecipe(prompt)
         console.log("Desde handlesubmit")
     }
+    
     return (
         <>
             <h1 className="text-6xl font-extrabold">Generar Receta con IA</h1>
