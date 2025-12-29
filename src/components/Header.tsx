@@ -8,8 +8,8 @@ export default function Header() {
         ingridient : '',
         category: ''
     })
+    
     const {pathname} = useLocation()
-
     const isHome= useMemo(() => pathname === '/' ,[pathname])
     const fetchCategories =  useAppStore((state) => state.fetchCategories)
     const categories =  useAppStore((state) => state.categories)
@@ -49,7 +49,6 @@ export default function Header() {
                         <NavLink 
                             className= {({isActive}) => isActive ? "text-orange-500 uppercase font-bold" : "text-white uppercase font-bold"}
                             to='/'
-
                         >Inicio</NavLink>
                         <NavLink 
                             className= {({isActive}) => isActive ? "text-orange-500 uppercase font-bold" : "text-white uppercase font-bold"}
