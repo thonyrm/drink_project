@@ -2,7 +2,6 @@ import { useMemo } from "react"
 import { useAppStore } from "../store/useAppStore"
 import DrinkCard from "../components/DrinkCard"
 
-
 export default function IndexPage() {
 
     const drinks =  useAppStore((state)=> state.drinks)
